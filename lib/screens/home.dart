@@ -15,7 +15,24 @@ class Home extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(20)),
-              child: TextField(),
+              child: TextField(
+                // onChanged: (value) => _runFilter(value),
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.all(0),
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: tdBlack,
+                    size: 20,
+                  ),
+                  prefixIconConstraints: BoxConstraints(
+                    maxHeight: 20,
+                    minWidth: 25,
+                  ),
+                  border: InputBorder.none,
+                  hintText: 'Search',
+                  hintStyle: TextStyle(color: tdGrey),
+                ),
+              ),
             )
           ],
         ),
