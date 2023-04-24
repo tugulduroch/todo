@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:todo/constants/colors.dart';
 
-class name extends StatelessWidget {
-  const name({super.key});
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: tdBGColor,
-        title: Row(children: [
+        title:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Icon(
             Icons.menu,
             color: tdBlack,
