@@ -28,6 +28,7 @@ class Home extends StatelessWidget {
                   ),
                   // ignore: prefer_const_constructors
                   TodoList(),
+                  TodoList(),
                 ],
               ),
             )
