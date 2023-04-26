@@ -9,10 +9,24 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: _buildAppBar(),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: Column(
           children: [
             searchBar(),
+            Expanded(
+              child: ListView(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 50, bottom: 20),
+                    child: Text("All ToDos",
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w500,
+                        )),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
