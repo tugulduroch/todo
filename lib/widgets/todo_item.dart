@@ -24,6 +24,18 @@ class TodoList extends StatelessWidget {
               color: tdBlack,
               decoration: TextDecoration.lineThrough),
         ),
+        trailing: Container(
+          width: 35,
+          height: 35,
+          decoration: BoxDecoration(
+              color: tdRed, borderRadius: BorderRadius.circular(5)),
+          child: IconButton(
+            iconSize: 18,
+            color: Colors.white,
+            icon: Icon(Icons.delete),
+            onPressed: () {},
+          ),
+        ),
       ),
     );
   }
