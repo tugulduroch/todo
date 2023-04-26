@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 import 'package:todo/constants/colors.dart';
+import '../widgets/todo_item.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -23,7 +25,9 @@ class Home extends StatelessWidget {
                           fontSize: 30,
                           fontWeight: FontWeight.w500,
                         )),
-                  )
+                  ),
+                  // ignore: prefer_const_constructors
+                  TodoList(),
                 ],
               ),
             )
