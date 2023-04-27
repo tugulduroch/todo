@@ -39,7 +39,7 @@ class TodoList extends StatelessWidget {
             iconSize: 18,
             color: Colors.white,
             icon: Icon(Icons.delete),
-            onPressed: () {},
+            // onPressed: () {},
           ),
         ),
       ),
