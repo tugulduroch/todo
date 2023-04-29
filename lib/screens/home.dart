@@ -17,6 +17,12 @@ class _HomeState extends State<Home> {
   final _todoController = TextEditingController();
 
   @override
+  void initState() {
+    _foundToDo = todosList;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
@@ -75,6 +81,7 @@ class _HomeState extends State<Home> {
                         ],
                         borderRadius: BorderRadius.circular(10)),
                     child: TextField(
+                      controller: _todoController,
                       decoration: InputDecoration(
                           hintText: 'Add a new ToDo item',
                           border: InputBorder.none),
@@ -88,7 +95,9 @@ class _HomeState extends State<Home> {
                       '+',
                       style: TextStyle(fontSize: 40),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      _addToDoItem(_todoController.text);
+                    },
                     style: ElevatedButton.styleFrom(
                       primary: tdBlue,
                       minimumSize: Size(60, 60),
@@ -149,7 +158,7 @@ class _HomeState extends State<Home> {
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(20)),
       child: TextField(
-        // onChanged: (value) => _runFilter(value),
+        onChanged: (value) => _runFilter(value),
         decoration: InputDecoration(
           contentPadding: EdgeInsets.all(0),
           prefixIcon: Icon(
