@@ -13,6 +13,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final todosList = ToDo.todoList();
+  List<ToDo> _foundToDo = [];
+  final _todoController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,7 @@ class _HomeState extends State<Home> {
                         TodoItem(
                           todo: todo,
                           onToDoChanged: _handleToDoChange,
-                          onDeleteItem: () {},
+                          onDeleteItem: _deleteToDoItem,
                         ),
                     ],
                   ),
@@ -121,7 +123,7 @@ class _HomeState extends State<Home> {
         todoText: toDo,
       ));
     });
-    // _todoController.clear();
+    _todoController.clear();
   }
 
   void _runFilter(String enteredKeyword) {
@@ -137,7 +139,7 @@ class _HomeState extends State<Home> {
     }
 
     setState(() {
-      // _foundToDo = results;
+      _foundToDo = results;
     });
   }
 
